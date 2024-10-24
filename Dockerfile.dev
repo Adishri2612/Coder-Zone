@@ -1,0 +1,7 @@
+FROM node:16
+WORKDIR /frontend
+COPY ./frontend/package*.json ./
+RUN npm install --force --legacy-peer-deps
+COPY ./frontend/ ./
+# CMD ["echo 'Hello World' "]
+CMD ["npm", "run", "start"]
